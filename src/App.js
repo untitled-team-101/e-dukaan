@@ -1,11 +1,11 @@
-import './App.css';
+import './App.scss';
 import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 import CartPage from "./components/CartPage";
 import LandingPage from "./components/LandingPage";
 import CheckoutPage from "./components/CheckoutPage";
 import ProductPage from "./components/ProductPage";
 import OrderPage from "./components/OrderPage";
-import Navbar from "./components/Navbar";
+import NavBar from "./components/Navbar";
 import Footer from "./components/Footer";
 import {useEffect} from "react";
 import {useSelector, useDispatch} from "react-redux";
@@ -21,7 +21,7 @@ function App() {
   }, [])
   return (
     <div className="App">
-      <Navbar/>
+      <NavBar/>
       <Router>
         <Switch>
           <Route to='/' exact component={LandingPage}/>
