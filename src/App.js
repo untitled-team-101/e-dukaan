@@ -23,7 +23,6 @@ function App() {
     <div className="App">
       <Router>
       <NavBar/>
-      <Link to="/cart"> cart </Link>
         <Switch>
           <Route path='/' exact component={LandingPage}/>
           <Route path='/cart' exact component={CartPage}/>
