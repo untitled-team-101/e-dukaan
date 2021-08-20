@@ -1,5 +1,5 @@
 import './App.scss';
-import {HashRouter as Router, Route, Switch} from 'react-router-dom';
+import {HashRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import CartPage from "./components/CartPage";
 import LandingPage from "./components/LandingPage";
 import CheckoutPage from "./components/CheckoutPage";
@@ -21,14 +21,15 @@ function App() {
   }, [])
   return (
     <div className="App">
-      <NavBar/>
       <Router>
+      <NavBar/>
+      <Link to="/cart"> cart </Link>
         <Switch>
-          <Route to='/' exact component={LandingPage}/>
-          <Route to='/cart' exact component={CartPage}/>
-          <Route to='/checkout' exact component={CheckoutPage}/>
-          <Route to='/product' exact component={ProductPage}/>
-          <Route to='/orders' exact component={OrderPage}/>
+          <Route path='/' exact component={LandingPage}/>
+          <Route path='/cart' exact component={CartPage}/>
+          <Route path='/checkout' exact component={CheckoutPage}/>
+          <Route path='/product' exact component={ProductPage}/>
+          <Route path='/orders' exact component={OrderPage}/>
         </Switch>
       </Router>
       <Footer/>
