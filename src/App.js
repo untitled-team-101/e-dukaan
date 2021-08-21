@@ -11,7 +11,9 @@ import {useEffect} from "react";
 import {useDispatch} from "react-redux";
 import {loadProducts} from "./Redux/products/Actions";
 
+
 function App() {
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadProducts());
