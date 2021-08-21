@@ -1,5 +1,5 @@
 import './App.scss';
-import {HashRouter as Router, Route, Switch, Link} from 'react-router-dom';
+import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 import CartPage from "./components/CartPage";
 import LandingPage from "./components/LandingPage";
 import CheckoutPage from "./components/CheckoutPage";
