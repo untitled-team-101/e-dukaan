@@ -8,42 +8,34 @@ import {Link} from "react-router-dom";
 function NavBar() {
   const user = useSelector(state => state.user)
   const dispatch = useDispatch()
-  return (
-    <nav className="navbar sticky-top navbar-expand-md navbar-dark bg-primary">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="#"><i className="fab fa-opencart"/> E-DUKAAN</a>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#avbarSupportedContent" aria-controls="avbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"/>
-        </button>
-        <div className="collapse navbar-collapse" id="avbarSupportedContent">
-          <ul className="d-flex align-items-center navbar-nav">
-            <li className='nav-item'>
-              <a className="nav-link active login-btn" aria-current="page" href="#"
+  return (<>
+  <div className="of-hidden">
+    <nav className="navbar w-100 sticky-top navbar-dark bg-primary">
+      <div className="container-fluid row">
+      <div className="col-lg-2 col-md-3 col-4">
+              <Link className="nav-link active login-btn" aria-current="page" to="#"
                  onClick={() => dispatch(showLoginPopup())}>
                 <i className="far fa-user"/>
                 {
                   user.loggedIn ? "profile" : "login"
                 }
-              </a>
+              </Link>
               {
                 user.popup ?
                   <Login/>
                   : ""
               }
-            </li>
-            <li className='nav-item'>
-
-              <Link to='/cart'>
-                <a className="nav-link active cart-btn" aria-current="page" href="#"><i
+          </div>
+     
+             <div className="col-lg-8 col-md-6 col-6"><Link className="navbar-brand brand-name-nav" to="#"><i className="fab fa-opencart"/> E-DUKAAN</Link></div> 
+             <div className="col-lg-2 col-md-3 col-2">
+      <Link to='/cart'>
+                <a className="nav-link active cart-btn" aria-current="page" href="/"><i
                   className="fad fa-shopping-cart"/></a>
-              </Link>
-            </li>
-          </ul>
+              </Link></div>
         </div>
-      </div>
-    </nav>
+    </nav></div>
+    </>
   );
 }
 

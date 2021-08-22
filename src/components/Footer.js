@@ -1,5 +1,7 @@
 import React from 'react';
 import './styles/footer.scss'
+import {Link} from 'react-router-dom'
+
 function Footer(props) {
   return (
     <div>
@@ -18,20 +20,20 @@ function Footer(props) {
           <div className="footer-decoration"/>
           <br />
           <ul className="product-ul-footer font-small">
-            <li className="product-li-footer"> <a className="text-white text-decoration-none" href="">Camera</a></li>
-            <li className="product-li-footer"><a className="text-white text-decoration-none" href="">Laptop</a></li>
-            <li className="product-li-footer"><a className="text-white text-decoration-none" href="">Grocery</a></li>
-            <li className="product-li-footer"><a className="text-white text-decoration-none" href="">Home Appliances</a></li>
+            <li className="product-li-footer"> <Link className="text-white text-decoration-none" to="/">Camera</Link></li>
+            <li className="product-li-footer"><Link className="text-white text-decoration-none" to="/">Laptop</Link></li>
+            <li className="product-li-footer"><Link className="text-white text-decoration-none" to="/">Grocery</Link></li>
+            <li className="product-li-footer"><Link className="text-white text-decoration-none" to="/">Home Appliances</Link></li>
           </ul>
 </div>
         <div className="col-lg-3 col-sm-6"><h3>USEFUL LINKS</h3>
           <div className="footer-decoration"></div>
           <br />
           <ul className="product-ul-footer font-small">
-            <li className="product-li-footer"><a className="text-white text-decoration-none" href="">Your Account</a></li>
-            <li className="product-li-footer"><a className="text-white text-decoration-none" href="">Become an Affiliate</a></li>
-            <li className="product-li-footer"><a className="text-white text-decoration-none" href="">Shipping Rates</a></li>
-            <li className="product-li-footer"><a className="text-white text-decoration-none" href="">Help</a></li>
+            <li className="product-li-footer"><Link className="text-white text-decoration-none" to="/">Your Account</Link></li>
+            <li className="product-li-footer"><Link className="text-white text-decoration-none" to="/">Become an Affiliate</Link></li>
+            <li className="product-li-footer"><Link className="text-white text-decoration-none" to="/">Shipping Rates</Link></li>
+            <li className="product-li-footer"><Link className="text-white text-decoration-none" to="/">Help</Link></li>
           </ul></div>
         <div className="col-lg-3 col-sm-6"><h3>Contact</h3>
           <div className="footer-decoration"/>
@@ -47,7 +49,7 @@ function Footer(props) {
     </div>
     <nav className="navbar navbar-dark bg-primary">
     <div className="container-fluid">
-      <a className="navbar-brand m-auto" rel="noreferrer" target="_blank" href="https://github.com/untitled-team-101">&copy; UNTITLED TEAM</a>
+      <Link className="navbar-brand m-auto" rel="noreferrer" target="_blank" to="https://github.com/untitled-team-101">&copy; UNTITLED TEAM</Link>
     </div>
   </nav>
   </div>
