@@ -9,13 +9,13 @@ function Footer(props) {
         <div className="col-lg-3 col-sm-6">
 
           <h3>E-DUKAAN</h3>
-          <div className="footer-decoration"></div>
+          <div className="footer-decoration"/>
           <br />
           <p className="company-description font-small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et delectus ullam quasi, aut harum magni</p>
 
         </div>
         <div className="col-lg-3 col-sm-6 "><h3>PRODUCTS</h3>
-          <div className="footer-decoration"></div>
+          <div className="footer-decoration"/>
           <br />
           <ul className="product-ul-footer font-small">
             <li className="product-li-footer"> <a className="text-white text-decoration-none" href="">Camera</a></li>
@@ -34,20 +34,20 @@ function Footer(props) {
             <li className="product-li-footer"><a className="text-white text-decoration-none" href="">Help</a></li>
           </ul></div>
         <div className="col-lg-3 col-sm-6"><h3>Contact</h3>
-          <div className="footer-decoration"></div>
+          <div className="footer-decoration"/>
           <br />
           <ul className="product-ul-footer font-small">
-            <li className="product-li-footer"><i class="fad fa-briefcase"></i> mumbai,India,400001.</li>
-            <li className="product-li-footer"><i class="fas fa-envelope"></i> edukaan@untitledteam.com</li>
-            <li className="product-li-footer"><i class="fas fa-phone"></i> +91 9876543210 </li>
-            <li className="product-li-footer"><i class="fad fa-phone-office"></i> 1800 1899 1714</li>
+            <li className="product-li-footer"><i className="fad fa-briefcase"/> mumbai,India,400001.</li>
+            <li className="product-li-footer"><i className="fas fa-envelope"/> edukaan@untitledteam.com</li>
+            <li className="product-li-footer"><i className="fas fa-phone"/> +91 9876543210 </li>
+            <li className="product-li-footer"><i className="fad fa-phone-office"/> 1800 1899 1714</li>
           </ul></div>
       </div>
       </div>
     </div>
-    <nav class="navbar navbar-dark bg-primary">
-    <div class="container-fluid">
-      <a class="navbar-brand m-auto" rel="noreferrer" target="_blank" href="https://github.com/untitled-team-101">&copy; UNTITLED TEAM</a>
+    <nav className="navbar navbar-dark bg-primary">
+    <div className="container-fluid">
+      <a className="navbar-brand m-auto" rel="noreferrer" target="_blank" href="https://github.com/untitled-team-101">&copy; UNTITLED TEAM</a>
     </div>
   </nav>
   </div>

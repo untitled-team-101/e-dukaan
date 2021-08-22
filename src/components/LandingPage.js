@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import Productcard from "./productcard";
+import './styles/homepage.scss';
 
 function LandingPage(props) {
   return (
@@ -141,7 +142,7 @@ function LandingPage(props) {
         </div>
       </div>
       <div className='row gy-5 gx-0'>
-        <Productcard image='https://source.unsplash.com/600x600?product' title='This is a title' adjective='bestseller' price={'₹'+300} rating='4'/>
+        <Productcard image='https://source.unsplash.com/600x600?product' title='This is a title' adjective='bestseller' price={'₹'+300} rating={5}/>
         <Productcard image='https://source.unsplash.com/600x600?product'/>
         <Productcard image='https://source.unsplash.com/600x600?product'/>
         <Productcard image='https://source.unsplash.com/600x600?product'/>
