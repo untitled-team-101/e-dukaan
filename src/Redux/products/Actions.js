@@ -2,12 +2,18 @@ import {LOAD_PRODUCTS, SEARCH_PRODUCTS} from "../CONSTANTS";
 
 export const loadProducts = () => {
   return dispatch => {
-    fetch("/products.json")
+    fetch("https://fakestoreapi.com/products")
       .then(response => response.json())
       .then(data => {
         dispatch({
           type: LOAD_PRODUCTS,
-          payload: data
+          payload: data.map(product => {
+            return {
+              ...product,
+              price: product.price * 75,
+              rating: Math.floor(2 + (Math.random() * 4))
+            }
+          })
         })
       });
   }

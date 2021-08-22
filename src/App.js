@@ -26,7 +26,7 @@ function App() {
           <Route path='/' exact component={LandingPage}/>
           <Route path='/cart' exact component={CartPage}/>
           <Route path='/checkout' exact component={CheckoutPage}/>
-          <Route path='/product' exact component={ProductPage}/>
+          <Route path='/product/:id' exact component={ProductPage}/>
           <Route path='/orders' exact component={OrderPage}/>
         </Switch>
       </Router>
