@@ -1,21 +1,34 @@
 import React from 'react';
+import {addToCart} from "../Redux/cart/Actions";
+import {useDispatch, useSelector} from "react-redux";
+import {Link} from "react-router-dom";
 
-function Productcard({image, title, adjective, rating, price}) {
+
+function Productcard({product}) {
+  const dispatch = useDispatch()
   return (
     <div className="card rounded mb-3 mx-sm-0 col-md-6">
-      <div className="row g-0">
-        <div className="col-md-4" style={{backgroundImage: 'url('+image+')', backgroundPosition: 'center', backgroundSize: "cover"}}>
+      <div className="row g-0 h-100">
+        <div className="col-md-4"
+             style={{
+               backgroundImage: 'url(' + product.image + ')',
+               backgroundPosition: 'center',
+               backgroundSize: "contain",
+               backgroundRepeat: "no-repeat"
+             }}>
         </div>
         <div className="col-md-7 offset-md-1">
           <div className="card-body" style={{textAlign: "left"}}>
-            <h2 className="card-title">{title}</h2>
-            <span className="badge bg-primary">{adjective}</span>
+            <Link to={'/product/' + product.id}>
+              <h2 className="card-title">{product.title}</h2>
+            </Link>
+            <span className="badge bg-primary">{product.adjective}</span>
             <div className='row'>
-              <h3>{price}</h3>
+              <h3>{product.price}</h3>
             </div>
             <div className='d-flex'>
               {
-                [...Array(rating)].map((value, index, array) => {
+                [...Array(product.rating)].map((value, index, array) => {
                   return (
                     <i className="fas fa-star rating"/>
                   );
@@ -23,7 +36,7 @@ function Productcard({image, title, adjective, rating, price}) {
               }
             </div>
             <div className='row mt-3'>
-              <button className='btn btn-primary'>Add to Cart</button>
+              <button className='btn btn-primary' onClick={() => dispatch(addToCart(product))}>Add to Cart</button>
             </div>
           </div>
         </div>

@@ -17,8 +17,7 @@ function NavBar() {
                 aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"/>
         </button>
-        
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className="collapse navbar-collapse" id="avbarSupportedContent">
           <ul className="d-flex align-items-center navbar-nav">
             <li className='nav-item'>
               <a className="nav-link active login-btn" aria-current="page" href="#"
