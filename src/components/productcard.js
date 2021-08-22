@@ -1,10 +1,10 @@
 import React from 'react';
 import {addToCart} from "../Redux/cart/Actions";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {Link} from "react-router-dom";
 
 
-function Productcard({product}) {
+function ProductCard({product}) {
   const dispatch = useDispatch()
   return (
     <div className="card rounded mb-3 mx-sm-0 col-md-6">
@@ -45,4 +45,4 @@ function Productcard({product}) {
   );
 }
 
-export default Productcard;
+export default ProductCard;
