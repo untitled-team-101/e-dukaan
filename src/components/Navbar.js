@@ -39,10 +39,12 @@ function NavBar(props) {
             </li> */}
           </div>
           <ul className="d-flex align-items-center navbar-nav">
-            <li className=''>
-              <a className="nav-link login-btn" aria-current="page" href="#"><i className="far fa-user"/>Login</a>
+            <li className='nav-item'>
+              <a className="nav-link active login-btn" aria-current="page" href="#"><i className="far fa-user"/>Login</a>
             </li>
-              <a className="nav-link cart-btn" aria-current="page" href="#"><i className="fad fa-shopping-cart"/></a>
+            <li className='nav-item'>
+              <a className="nav-link active cart-btn" aria-current="page" href="#"><i className="fad fa-shopping-cart"/></a>
+            </li>
           </ul>
         </div>
       </div>

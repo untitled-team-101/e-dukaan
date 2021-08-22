@@ -7,7 +7,7 @@ function LandingPage(props) {
       <div className='row mt-5'>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
           <div className="container">
-            <a className="navbar-brand" href="#">categories</a>
+            <a className="navbar-brand" href="#">Categories</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbar2" aria-controls="navbar2"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -77,7 +77,7 @@ function LandingPage(props) {
                 <img src="https://source.unsplash.com/600x200?products" className="d-block w-100 rounded-3" alt="..."/>
               </div>
               <div className="carousel-item">
-                <img src="https://source.unsplash.com/600x200?product,pictures" className="d-block w-100 rounded-3"
+                <img src="https://source.unsplash.com/600x200?product,airpods" className="d-block w-100 rounded-3"
                      alt="..."/>
               </div>
             </div>
@@ -141,7 +141,7 @@ function LandingPage(props) {
         </div>
       </div>
       <div className='row gy-5 gx-0'>
-        <Productcard image='https://source.unsplash.com/600x600?product' title='This is a title' adjective='bestseller' price={'₹'+300}/>
+        <Productcard image='https://source.unsplash.com/600x600?product' title='This is a title' adjective='bestseller' price={'₹'+300} rating='4'/>
         <Productcard image='https://source.unsplash.com/600x600?product'/>
         <Productcard image='https://source.unsplash.com/600x600?product'/>
         <Productcard image='https://source.unsplash.com/600x600?product'/>
