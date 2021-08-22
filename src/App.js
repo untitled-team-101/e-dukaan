@@ -29,8 +29,8 @@ function App() {
           <Route path='/product/:id' exact component={ProductPage}/>
           <Route path='/orders' exact component={OrderPage}/>
         </Switch>
-      </Router>
       <Footer/>
+      </Router>
     </div>
   );
 }
