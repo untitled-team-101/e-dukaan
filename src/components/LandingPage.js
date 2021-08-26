@@ -1,13 +1,14 @@
 import React, {useEffect} from 'react';
-import Productcard from "./productcard";
+import ProductCard from "./productcard";
 import './styles/homepage.scss';
-import {useSelector} from "react-redux";
-
-
+import {useDispatch, useSelector} from "react-redux";
+import {selectCategory} from "../Redux/products/Actions";
+import {Link} from "react-router-dom";
 
 function LandingPage() {
-  const products=useSelector(state => state.products.chosenProducts)
-
+  const products = useSelector(state => state.products.chosenProducts)
+  const categories = useSelector(state => state.products.allCategories)
+  const dispatch = useDispatch()
   if (!products)
     return "No Product to show"
   else
@@ -16,7 +17,7 @@ function LandingPage() {
         <div className='row mt-5'>
           <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
             <div className="container">
-              <a className="navbar-brand" href="#">Categories</a>
+              <Link className="navbar-brand" to="#">Categories</Link>
               <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                       data-bs-target="#navbar2" aria-controls="navbar2"
                       aria-expanded="false" aria-label="Toggle navigation">
@@ -24,50 +25,16 @@ function LandingPage() {
               </button>
               <div className="collapse navbar-collapse" id="navbar2">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-bs-toggle="dropdown" aria-expanded="false">
-                      Laptop
-                    </a>
-                    <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a className="dropdown-item" href="#">Action</a></li>
-                      <li><a className="dropdown-item" href="#">Another action</a></li>
-                      <li>
-                        <hr className="dropdown-divider"/>
+                  {
+                    categories.map((category, i)=>{
+                      return <li className="nav-item dropdown" key={i}>
+                        <div className="nav-link" onClick={() => dispatch(selectCategory(category))}>
+                          {category}
+                        </div>
                       </li>
-                      <li><a className="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-bs-toggle="dropdown" aria-expanded="false">
-                      Tablet
-                    </a>
-                    <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a className="dropdown-item" href="#">Action</a></li>
-                      <li><a className="dropdown-item" href="#">Another action</a></li>
-                      <li>
-                        <hr className="dropdown-divider"/>
-                      </li>
-                      <li><a className="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-bs-toggle="dropdown" aria-expanded="false">
-                      Mobile
-                    </a>
-                    <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a className="dropdown-item" href="#">Action</a></li>
-                      <li><a className="dropdown-item" href="#">Another action</a></li>
-                      <li>
-                        <hr className="dropdown-divider"/>
-                      </li>
-                      <li><a className="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
+                    })
+                  }
                 </ul>
-
                 <form className="d-flex">
                   <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
                 </form>
@@ -153,29 +120,13 @@ function LandingPage() {
         <div className='row gy-5 gx-0'>
           {
             products.map((product, indx) => {
-
               return (
-                <Productcard product={product}/>
+                <ProductCard product={product} key={indx}/>
               );
             })
           }
         </div>
       </div>
-
-
-      // <>
-      //       return <div key={indx}>
-      //         <Link to={`/product/${product.id}`}>
-      //           {product.title}
-      //         </Link>
-      //         <div>Rs. {product.price}/-</div>
-      //         <button onClick={()=>dispatch(addToCart(product))}>Add to cart</button>
-      //       </div>
-      //     })
-      //   }
-      // </>
-
-
     );
 }
 

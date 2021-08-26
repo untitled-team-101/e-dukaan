@@ -1,4 +1,4 @@
-import {ADD_TO_CART, DECREASE_COUNT, INCREASE_COUNT, REMOVE_FROM_CART} from "../CONSTANTS";
+import {ADD_TO_CART, CLEAR_CART, DECREASE_COUNT, INCREASE_COUNT, REMOVE_FROM_CART} from "../CONSTANTS";
 
 const initialState = JSON.parse(localStorage.getItem("cart")) || []
 
@@ -38,6 +38,10 @@ const reducer = (state = initialState, action) => {
               }
           return product
         })]
+      localStorage.setItem("cart", JSON.stringify(state))
+      return state
+    case CLEAR_CART:
+      state = []
       localStorage.setItem("cart", JSON.stringify(state))
       return state
     default:
