@@ -14,7 +14,8 @@ function NavBar() {
       <div className="container-fluid row">
       <div className="col-lg-2 col-md-3 col-4">
               <Link className="nav-link active login-btn" aria-current="page" to="#"
-                 onClick={() => dispatch(showLoginPopup())}>
+                //  onClick={() => dispatch(showLoginPopup())}
+                data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <i className="far fa-user"/>
                 {
                   user.loggedIn ? "profile" : "login"
@@ -22,11 +23,10 @@ function NavBar() {
               </Link>
               {
                 user.popup ?
-                  <Login/>
+                  ""
                   : ""
               }
           </div>
-     
              <div className="col-lg-8 col-md-6 col-6"><Link className="navbar-brand brand-name-nav" to="#"><i className="fab fa-opencart"/> E-DUKAAN</Link></div> 
              <div className="col-lg-2 col-md-3 col-2">
       <Link to='/cart'>
@@ -35,6 +35,7 @@ function NavBar() {
               </Link></div>
         </div>
     </nav></div>
+    <Login/>
     </>
   );
 }
